@@ -81,8 +81,8 @@ page {
   padding: 0 10rpx;
   font-size: 20rpx;
   color: #ff5577;
-  background-color: #ffe8ee;
-  border-radius: 1% solid #ffe8ee;
+  background-color: #00afb4;
+  border-radius: 1% solid #00afb4;
 }
 
 .userbox .my-sign{

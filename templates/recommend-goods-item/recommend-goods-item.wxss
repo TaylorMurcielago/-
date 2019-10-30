@@ -8,9 +8,23 @@
   height: 250rpx;
 }
 .goods-box .headTitle {
-  width: 250rpx;
-  height: 25rpx;
-  background-color: red;
+  width: 100%;
+  height: 50rpx;
+  line-height:40rpx;
+  font-size: 28rpx;
+  background-color:#00afb4 ;
+}
+.goods-box .goodsContent{
+  position: absolute;
+  /* background-color: green; */
+  width: 100%;
+  height: 100%;
+}
+.goods-box .bodycontent{
+width: 100%;
+height: 250rpx;
+display: flex;
+/* background-color: blue; */
 }
 
 .goods-box .img-box .image .fresh-tag {
@@ -30,22 +44,32 @@
 }
 
 .goods-box .goods-title {
-  width: 430;
+  width: 80rpx;
   height: 60rpx;
   font-size: 28rpx;
   text-align: left;
   padding-top: 5rpx;
   color: black;
+  display: flex;
+}
+
+.goods-box .goods-title .label {
+margin-left: 10rpx;
 }
 
 .goods-box .goods-introduction {
-  width: 430;
+  width: 80rpx;
   height: 100rpx;
   font-size: 24rpx;
   text-align: left;
   padding-top: 5rpx;
   color: dimgrey;
+  display: flex;
 }
+.goods-box .goods-introduction .label {
+  margin-left: 10rpx;
+  }
+  
 
 .goods-box .goods-price-box {
   width: 430rpx;
@@ -73,12 +97,13 @@
 }
 
 .goods-box .sellInformation {
-  width: 430rpx;
+  width: 100%;
   height: 45rpx;
   display: flex;
   border-bottom: 1px solid rgba(0, 0, 0, 0.15);
   color: gray;
   font-size: 22rpx;
+  margin-top: 18rpx;
 }
 
 .goods-box .sellInformation .goodsSoldNumber {
