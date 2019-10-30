@@ -12,7 +12,7 @@
         <!-- <image src="{{item.pic}}" class="image">
           <image class='fresh-tag' src="/images/goodsDescription/fresh.png"></image>
         </image> -->
-        <wxc-avatar class="avatar" src='/images/goodsDescription/avatar.jpg'></wxc-avatar>
+        <wxc-avatar class="avatar" src='https://www.lcpww.cn/images/avatar.jpg'></wxc-avatar>
 
       </view>
 
