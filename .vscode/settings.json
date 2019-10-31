@@ -4,5 +4,6 @@
         "*.wxss": "css",
         "*.wxs": "javascript",
         "*.wxml": "html"
-    }
+    },
+    "python.linting.enabled": false
 }

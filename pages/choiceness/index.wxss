@@ -141,13 +141,18 @@ page {
 
 .goods-box {
   position: relative;
-  width: 700rpx;
+  /* width: 700rpx; */
   height: 400rpx;
   background-color: white;
   overflow: hidden;
   margin: 0 0 25rpx 25rpx;
   display: inline-flex;
-  flex-direction: row;
+  flex-direction: row;  
+  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.3),0 0 3px rgba(0,0,0,0.1) inset;
+  -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.3),0 0 3px rgba(0,0,0,0.1) inset;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3),0 0 3px rgba(0,0,0,0.1) inset;
+  -o-box-shadow:0 1px 3px rgba(0,0,0,0.3),0 0 3px rgba(0,0,0,0.1) inset;
+
 }
 
 .pos-fiexd {
