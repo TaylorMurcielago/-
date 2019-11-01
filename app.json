@@ -75,5 +75,8 @@
     "uploadFile": 10000,
     "downloadFile": 10000
   },
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {
+    "van-icon": "/miniprogram_npm/vant-weapp/icon/index"
+  }
 }

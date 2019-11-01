@@ -8,6 +8,8 @@
     "wxc-label": "../../dist/packages/@minui/wxc-label/dist/index",
     "wxc-popup": "../../dist/packages/@minui/wxc-popup/dist/index",
     "wxc-avatar": "../../dist/packages/@minui/wxc-avatar/dist/index",
-    "wxc-panel": "../../dist/packages/@minui/wxc-panel/dist/index"
+    "wxc-panel": "../../dist/packages/@minui/wxc-panel/dist/index",
+    "van-button": "../../miniprogram_npm/vant-weapp/button/index",
+    "van-notice-bar":"../../miniprogram_npm/vant-weapp/notice-bar/index"
   }
 }

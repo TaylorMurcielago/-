@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .goods-box .img-box {
   width: 250rpx;
   height: 250rpx;
@@ -7,37 +8,41 @@
   width: 250rpx;
   height: 250rpx;
 }
+
 .goods-box .headTitle {
   width: 100%;
   height: 50rpx;
-  line-height:40rpx;
+  line-height: 40rpx;
   /* font-size: 28rpx; */
-  background-color:#F87266;
+  background-color: #F87266;
   font: 12px/1.5 "Helvetica Neue",Helvetica,Arial,"Microsoft Yahei","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif;
   font-style: normal;
-  font-variant-ligatures: normal;
+  -webkit-font-variant-ligatures: normal;
+          font-variant-ligatures: normal;
   font-variant-caps: normal;
   font-variant-numeric: normal;
   font-variant-east-asian: normal;
   font-weight: normal;
   font-stretch: normal;
   font-size: 12px;
-   /* font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif; */
-
+  /* font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif; */
   /* font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial, sans-serif; */
-
 }
-.goods-box .goodsContent{
+
+.goods-box .goodsContent {
   position: absolute;
   /* background-color: green; */
   width: 100%;
   height: 100%;
 }
-.goods-box .bodycontent{
-width: 100%;
-height: 250rpx;
-display: flex;
-/* background-color: blue; */
+
+.goods-box .bodycontent {
+  width: 100%;
+  height: 250rpx;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  /* background-color: blue; */
 }
 
 .goods-box .img-box .image .fresh-tag {
@@ -52,8 +57,13 @@ display: flex;
   width: 430rpx;
   height: 250rpx;
   margin-left: 20rpx;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .goods-box .goods-title {
@@ -63,11 +73,13 @@ display: flex;
   text-align: left;
   padding-top: 5rpx;
   color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
 .goods-box .goods-title .label {
-margin-left: 10rpx;
+  margin-left: 10rpx;
 }
 
 .goods-box .goods-introduction {
@@ -77,20 +89,31 @@ margin-left: 10rpx;
   text-align: left;
   padding-top: 5rpx;
   color: dimgrey;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
+
 .goods-box .goods-introduction .label {
   margin-left: 10rpx;
-  }
-  
+}
 
 .goods-box .goods-price-box {
   width: 430rpx;
   height: 40rpx;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-end;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
   /*flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
@@ -101,7 +124,7 @@ margin-left: 10rpx;
 .goods-box .goods-price-box .goods-minPrice {
   font-size: 28rpx;
   font-weight: bold;
-  color:  #ff4422;
+  color: #ff4422;
 }
 
 .goods-box .goods-price-box .goods-originalPrice {
@@ -112,22 +135,11 @@ margin-left: 10rpx;
 .goods-box .sellInformation {
   width: 100%;
   height: 45rpx;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   /* border-bottom: 1px solid rgba(0, 0, 0, 0.15); */
   color: gray;
   font-size: 22rpx;
   margin-top: 18rpx;
-}
-
-.goods-box .sellInformation .goodsSoldNumber {
-  width: 40%;
-  padding: 5rpx 0;
-  text-align: left;
-}
-
-.goods-box .sellInformation .goodsScore {
-  overflow: hidden;
-  width: 60%;
-  padding: 5rpx 0;
-  text-align: left;
 }

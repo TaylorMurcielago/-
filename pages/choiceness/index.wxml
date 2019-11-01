@@ -52,13 +52,12 @@
         <view style='margin-left:20rpx;width:730rpx;height:4rpx;background-color:#f4f4f4;'></view>
         <view style='height:21rpx;background-color:#fff;'></view>
        
-        <wxc-panel class="goods-box" wx:for="{{recommendGoodsShow}}" wx:key="id" wx:for-item="item" data-id="{{item.id}}" bindtap="toDetailsTap">
-           <van-button type="primary">按钮11</van-button>
+        <view class="goods-box" wx:for="{{recommendGoodsShow}}" wx:key="id" wx:for-item="item" data-id="{{item.id}}" bindtap="toDetailsTap">
             <!-- <view class="headTitle" hover-class="none" hover-stop-propagation="false">
                 asdasdasdsdas=============++++++++++++++++++++++++++
               </view> -->
           <template is="recommend-goods-item" data="{{item}}"> </template>
-        </wxc-panel>
+        </view>
         <!-- <view class="goods-box" wx:for="{{recommendGoodsShow}}" wx:key="id" wx:for-item="item" data-id="{{item.id}}" bindtap="toDetailsTap">
           <template is="recommend-goods-item" data="{{item}}"> </template>
         </view> -->

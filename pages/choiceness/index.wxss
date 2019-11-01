@@ -1,5 +1,14 @@
 @charset "UTF-8";
 /**index.wxss**/
+.goods-box {
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  width: 40%;
+  border-radius: 5px;
+}
+
 .goods-box .img-box {
   width: 250rpx;
   height: 250rpx;
@@ -12,8 +21,6 @@
 
 .goods-box .headTitle {
   width: 100%;
-  height: 50rpx;
-  line-height: 40rpx;
   /* font-size: 28rpx; */
   background-color: #F87266;
   font: 12px/1.5 "Helvetica Neue",Helvetica,Arial,"Microsoft Yahei","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif;
@@ -28,6 +35,15 @@
   font-size: 12px;
   /* font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif; */
   /* font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial, sans-serif; */
+}
+
+.van-notice-bar {
+  height: 24px !important;
+  line-height: 24px !important;
+  font-size: 28rpx !important;
+  color: white !important;
+  background-color: #F87266 !important;
+  opacity: 0.85 !important;
 }
 
 .goods-box .goodsContent {
@@ -357,4 +373,28 @@ page {
   position: fixed;
   top: 0;
   left: 0;
+}
+
+.goods-box .persionDo {
+  width: 100%;
+  height: 45rpx;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  /* border-bottom: 1px solid rgba(0, 0, 0, 0.15); */
+  color: gray;
+  font-size: 22rpx;
+  margin-top: 18rpx;
+}
+
+.goods-box .persionDo view {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.goods-box .persionDo view van-icon {
+  color: #F87266;
 }
