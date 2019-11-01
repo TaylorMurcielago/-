@@ -26,11 +26,11 @@
           </wxc-label>
         </view>
         <view class='goods-introduction'>
-          <wxc-label class="label" text='{{item.characteristic}}'>
+          <wxc-label class="label" type='fill' text='{{item.characteristic}}'>
           </wxc-label>
-          <wxc-label class="label" text='{{item.characteristic}}'>
+          <wxc-label class="label" type='fill' text='{{item.characteristic}}'>
           </wxc-label>
-          <wxc-label class="label" text='{{item.characteristic}}'>
+          <wxc-label class="label" type='fill' text='{{item.characteristic}}'>
           </wxc-label>
         </view>
 
