@@ -53,6 +53,7 @@
         <view style='height:21rpx;background-color:#fff;'></view>
        
         <wxc-panel class="goods-box" wx:for="{{recommendGoodsShow}}" wx:key="id" wx:for-item="item" data-id="{{item.id}}" bindtap="toDetailsTap">
+           <van-button type="primary">按钮11</van-button>
             <!-- <view class="headTitle" hover-class="none" hover-stop-propagation="false">
                 asdasdasdsdas=============++++++++++++++++++++++++++
               </view> -->

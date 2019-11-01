@@ -1,4 +1,4 @@
-<import src="/dist/packages/@zanui/steps/index.wxml" />
+<!-- <import src="/dist/packages/@zanui/steps/index.wxml" /> -->
 <view class="container">
   <view class="sec-wrap">
     <view class="zan-cell__bd" style='padding: 30rpx 30rpx;'>
