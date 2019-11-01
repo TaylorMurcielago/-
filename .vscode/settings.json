@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
     
     "liveSassCompile.settings.formats": [
         {
@@ -8,4 +9,13 @@
         }
       ],
     "liveSassCompile.settings.generateMap": false  // 去掉map文件
+=======
+    "files.associations": {
+        "*.cjson": "jsonc",
+        "*.wxss": "css",
+        "*.wxs": "javascript",
+        "*.wxml": "html"
+    },
+    "python.linting.enabled": false
+>>>>>>> 68a11cb2d3af2e6d707368f54670a8c634bb8c87
 }
