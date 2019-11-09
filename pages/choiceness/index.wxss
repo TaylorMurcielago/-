@@ -100,7 +100,6 @@
 }
 
 .goods-box .goods-introduction {
-  width: 80rpx;
   height: 100rpx;
   font-size: 24rpx;
   text-align: left;

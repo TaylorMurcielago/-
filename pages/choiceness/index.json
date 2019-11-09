@@ -10,6 +10,8 @@
     "wxc-avatar": "../../dist/packages/@minui/wxc-avatar/dist/index",
     "wxc-panel": "../../dist/packages/@minui/wxc-panel/dist/index",
     "van-button": "../../miniprogram_npm/vant-weapp/button/index",
-    "van-notice-bar":"../../miniprogram_npm/vant-weapp/notice-bar/index"
+    "van-notice-bar":"../../miniprogram_npm/vant-weapp/notice-bar/index",
+    "van-search": "../../miniprogram_npm/vant-weapp/search/index",
+    "wxc-search": "../../dist/packages/@minui/wxc-search/dist/index"
   }
 }

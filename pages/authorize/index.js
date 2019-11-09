@@ -135,6 +135,7 @@ Page({
     wx.login({
       success: function (res) {
         var code = res.code; // 微信登录接口返回的 code 参数，下面注册接口需要用到
+        console.log("code"+code);
         wx.getUserInfo({
           success: function (res) {
             var iv = res.iv;

@@ -1,14 +1,9 @@
 <import src="../starscore/starscore.wxml" />
-
 <template name="recommend-goods-item">
-  <view  hover-class="none" hover-stop-propagation="false">
-<!-- <wxc-panel> -->
-
+  <view hover-class="none" hover-stop-propagation="false">
+    <!-- <wxc-panel> -->
     <view class="headTitle" hover-class="none" hover-stop-propagation="false">
-      <van-notice-bar scrollable="false"
-  text="执子之手🤡🤡🤡与子偕老">
-
-      </van-notice-bar>
+      <van-notice-bar scrollable="false" text="执子之手🤡🤡🤡与子偕老"></van-notice-bar>
     </view>
     <view class="bodycontent" hover-class="none" hover-stop-propagation="false">
       <view class="img-box">
@@ -16,48 +11,54 @@
           <image class='fresh-tag' src="/images/goodsDescription/fresh.png"></image>
         </image> -->
         <wxc-avatar class="avatar" src='https://www.lcpww.cn/images/avatar.jpg'></wxc-avatar>
-
       </view>
-
       <view class='goods-info-box'>
         <view class="goods-title">
-          <wxc-label class="label" type='fill' text='{{item.jobtype}}'>
+          <view wx:for="{{item.xuanxiang}}" wx:key="id" wx:for-item="item" data-id="{{item.id}}" bindtap="toDetailsTap">
+            <wxc-label class="label" type='fill' type-color="#ffe8ee" text-color="#ff5577" text='{{item}}'></wxc-label>
+            <!-- <view class="headTitle" hover-class="none" hover-stop-propagation="false">
+                asdasdasdsdas=============++++++++++++++++++++++++++
+              </view> -->
+            <!-- <template is="recommend-goods-item" data="{{item}}"> </template> -->
+          </view>
+          <!-- <wxc-label class="label" type='fill' text='{{item.jobtype}}'>
           </wxc-label>
           <wxc-label class="label"  type='fill' text='{{item.height}}'>
           </wxc-label>
           <wxc-label class="label"  type='fill' text='{{item.education}}'>
-          </wxc-label>
+          </wxc-label> -->
         </view>
         <view class='goods-introduction'>
-          <wxc-label class="label" type='fill' text='{{item.characteristic}}'>
+          <view wx:for="{{item.renzheng}}" wx:key="id" wx:for-item="item" data-id="{{item.id}}" bindtap="toDetailsTap">
+            <wxc-label class="label" type='fill' type-color="#ffe8ee" text-color="#ff5577" text='{{item}}'></wxc-label>
+            <!-- <view class="headTitle" hover-class="none" hover-stop-propagation="false">
+                asdasdasdsdas=============++++++++++++++++++++++++++
+              </view> -->
+            <!-- <template is="recommend-goods-item" data="{{item}}"> </template> -->
+          </view>
+          <!-- <wxc-label class="label" type='fill' text='{{item.characteristic}}'>
           </wxc-label>
           <wxc-label class="label" type='fill' text='{{item.characteristic}}'>
           </wxc-label>
           <wxc-label class="label" type='fill' text='{{item.characteristic}}'>
-          </wxc-label>
+          </wxc-label> -->
         </view>
-
         <view class="goods-price-box">
           <wxc-price class='goods-minPrice' value='{{item.minPrice}}'></wxc-price>
-          <wxc-price class="goods-originalPrice" wx:if='{{item.originalPrice != 0}}' value='{{item.originalPrice}}'
-            status='del'></wxc-price>
+          <wxc-price class="goods-originalPrice" wx:if='{{item.originalPrice != 0}}' value='{{item.originalPrice}}' status='del'></wxc-price>
         </view>
-
       </view>
-
-
-
     </view>
     <view class="persionDo">
-    <view class="" hover-class="none" hover-stop-propagation="false">
-       <van-icon name="like-o" size="40rpx"></van-icon>
-    </view>
-    <view class="" hover-class="none" hover-stop-propagation="false">
-       <van-icon name="friends-o" size="40rpx"></van-icon>
-    </view>
-    <view class="" hover-class="none" hover-stop-propagation="false">
-       <van-icon name="star-o" size="40rpx"></van-icon>
-    </view>
+      <view class="" hover-class="none" hover-stop-propagation="false">
+        <van-icon name="like-o" size="40rpx"></van-icon>
+      </view>
+      <view class="" hover-class="none" hover-stop-propagation="false">
+        <van-icon name="friends-o" size="40rpx"></van-icon>
+      </view>
+      <view class="" hover-class="none" hover-stop-propagation="false">
+        <van-icon name="star-o" size="40rpx"></van-icon>
+      </view>
       <!-- <wxc-label wx:if="{{item.numberOrders == 0}}" class="goodsSoldNumber1" type="fill">
       新品上市
       <van-icon name="like-o"></van-icon>
@@ -75,6 +76,6 @@
         <text style='padding-left:10rpx;' wx:else data-pingfen="{{item.starscore}}">0分</text>
       </wxc-label> -->
     </view>
-  <!-- </wxc-panel> -->
+    <!-- </wxc-panel> -->
   </view>
 </template>

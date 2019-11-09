@@ -24,7 +24,8 @@ Page({
     propertyChildNames: "",
     canSubmit: false, //  选中规格尺寸时候是否允许加入购物车
     shopCarInfo: {},
-    shopType: "addShopCar",//购物类型，加入购物车或立即购买，默认为加入购物车
+    shopType: "addShopCar",//购物类型，加入购物车或立即购买，默认为加入购物车,
+    activeNames: ['1','2','3']
   },
 
   //事件处理函数
@@ -48,38 +49,46 @@ Page({
       }
     })
     wx.request({
-      url: 'https://api.it120.cc/' + app.globalData.subDomain + '/shop/goods/detail',
+      url: app.globalData.baseApiUrl+ '/showlist',
       data: {
         id: e.id
       },
       success: function (res) {
         var selectSizeTemp = "";
-        if (res.data.data.properties) {
-          for (var i = 0; i < res.data.data.properties.length; i++) {
-            selectSizeTemp = selectSizeTemp + " " + res.data.data.properties[i].name;
+        if (res.data.pics) {
+          for (var i = 0; i < res.data.pics.length; i++) {
+            selectSizeTemp = selectSizeTemp + " " + res.data.pics[i].name;
           }
-          that.setData({
-            hasMoreSelect: true,
-            selectSize: that.data.selectSize + selectSizeTemp,
-            selectSizePrice: res.data.data.basicInfo.minPrice,
-          });
+          // that.setData({
+          //   hasMoreSelect: true,
+          //   selectSize: that.data.selectSize + selectSizeTemp,
+          //   selectSizePrice: res.data.data.basicInfo.minPrice,
+          // });
         }
-        that.data.goodsDetail = res.data.data;
-        if (res.data.data.basicInfo.videoId) {
-          that.getVideoSrc(res.data.data.basicInfo.videoId);
-        }
+        that.data.goodsDetail = res.data;
+        // if (res.data.data.basicInfo.videoId) {
+        //   that.getVideoSrc(res.data.data.basicInfo.videoId);
+        // }
         that.setData({
-          goodsDetail: res.data.data,
-          selectSizePrice: res.data.data.basicInfo.minPrice,
-          buyNumMax: res.data.data.basicInfo.stores,
-          buyNumber: (res.data.data.basicInfo.stores > 0) ? 1 : 0
+          goodsDetail: res.data
+          // ,
+          // selectSizePrice: res.data.data.basicInfo.minPrice,
+          // buyNumMax: res.data.data.basicInfo.stores,
+          // buyNumber: (res.data.data.basicInfo.stores > 0) ? 1 : 0
         });
-        WxParse.wxParse('article', 'html', res.data.data.content, that, 5);
+        console.log("((((((((999999"+that.data.goodsDetail);
+        // WxParse.wxParse('article', 'html', res.data.data.content, that, 5);
       }
     })
     this.reputation(e.id);
     this.getDeliveryPrice();
     this.getKanjiaInfo(e.id);
+  },
+  onChange1: function (event) {
+    var that=this;
+    that.setData({
+      activeNames: event.detail
+    });
   },
   goShopCar: function () {
     wx.reLaunch({
@@ -410,6 +419,11 @@ Page({
       }
     }
   },
+  change2:function(){
+    this.setData({
+      activeName: '0'
+    });
+  },
   reputation: function (goodsId) {
     var that = this;
     wx.request({
@@ -509,5 +523,49 @@ Page({
         }
       }
     })
+  },
+  onClickButton2:function(){
+    wx.showToast({
+
+            title:"成功",
+      
+            icon: 'loading...',//图标，支持"success"、"loading" 
+      
+      //       image: '/images/tan.png',//自定义图标的本地路径，image 的优先级高于 icon
+      
+            duration: 2000,//提示的延迟时间，单位毫秒，默认：1500 
+      
+            mask: false,//是否显示透明蒙层，防止触摸穿透，默认：false 
+      
+            success:function(){},
+      
+            fail:function(){},
+      
+            complete:function(){}
+      
+          })
+      
+  },
+  onClickButton1:function(){
+    wx.showToast({
+
+            title:"成功11",
+      
+            icon: 'loading...',//图标，支持"success"、"loading" 
+      
+      //       image: '/images/tan.png',//自定义图标的本地路径，image 的优先级高于 icon
+      
+            duration: 2000,//提示的延迟时间，单位毫秒，默认：1500 
+      
+            mask: false,//是否显示透明蒙层，防止触摸穿透，默认：false 
+      
+            success:function(){},
+      
+            fail:function(){},
+      
+            complete:function(){}
+      
+          })
+      
   }
 })

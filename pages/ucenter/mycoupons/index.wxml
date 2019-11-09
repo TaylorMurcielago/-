@@ -2,7 +2,7 @@
     <view class="coupons-list">
       <view class="coupons-item" wx:for-items="{{coupons}}" wx:for-index="idx" wx:key="id" data-id="{{item.id}}">
         <view class='coupons-money'>
-          <text > 布尔币\n\n {{item.money}} </text>
+          <text > 12布尔币\n\n {{item.money}} </text>
         </view>
         <view class='coupons-info'>
           <text style='font-size:48rpx;'> {{item.name}}\n </text>

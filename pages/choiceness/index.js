@@ -226,7 +226,7 @@ Page({
     })
 //taylor
     wx.request({
-      url: app.globalData.baseApiUrl+ '/showlist',
+      url: app.globalData.baseApiUrl+ '/goodslist',
       data: {
         // key: 'mallName'
       },
@@ -244,6 +244,7 @@ Page({
     })
 
 //taylor
+console.log(recommendGoodsShow+"0000000");
 
     var pageSize = 10; //一次加载万所有的推荐商品，避免minui显示问题that.data.recommendGoods.length
     var recommendGoodsShow = that.data.recommendGoodsShow;
@@ -282,7 +283,7 @@ Page({
         isEnd: true
       })
 
-      console.log(recommendGoodsShow.length, '-=-=-=-=-=-=-=')
+      console.log(recommendGoodsShow, '-=-=-=-=-=-=-=')
     }
   },
   handlerStart(e) {

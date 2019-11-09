@@ -8,7 +8,7 @@
           <view class="info">
             <view class="name">{{iitem.name}}</view>
             <view class="subtitle">{{iitem.goods_brief}}</view>
-            <view class="price">布尔币{{iitem.retail_price}}</view>
+            <view class="price">12布尔币{{iitem.retail_price}}</view>
           </view>
         </view>
       </view>

@@ -4,6 +4,15 @@
     "wxc-loadmore": "../../dist/packages/@minui/wxc-loadmore/dist/index",
     "wxc-price": "../../dist/packages/@minui/wxc-price/dist/index",
     "wxc-icon": "../../dist/packages/@minui/wxc-icon/dist/index",
-    "wxc-label": "../../dist/packages/@minui/wxc-label/dist/index"
+    "wxc-label": "../../dist/packages/@minui/wxc-label/dist/index",
+    "van-collapse": "../../miniprogram_npm/vant-weapp/collapse/index",
+    "van-collapse-item": "../../miniprogram_npm/vant-weapp/collapse-item/index",
+    "van-button": "../../miniprogram_npm/vant-weapp/button/index",
+    "van-notice-bar":"../../miniprogram_npm/vant-weapp/notice-bar/index",
+    "van-row": "../../miniprogram_npm/vant-weapp/row/index",
+    "van-col": "../../miniprogram_npm/vant-weapp/col/index",
+    "van-goods-action":"../../miniprogram_npm/vant-weapp/goods-action/index",
+    "van-goods-action-icon":"../../miniprogram_npm/vant-weapp/goods-action-icon/index",
+    "van-goods-action-button":"../../miniprogram_npm/vant-weapp/goods-action-button/index"
   }
 }

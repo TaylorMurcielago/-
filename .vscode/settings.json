@@ -7,11 +7,11 @@
         }
       ],
       "files.associations": {
-        // "*.cjson": "jsonc",
+        "*.cjson": "jsonc",
         "*.wxss": "css",
-        // "*.wxs": "javascript",
-        // "*.wxml": "html"
-    },
+        "*.wxs": "javascript",
+        "*.wxml": "html"
+      },
     "python.linting.enabled": false,
     "liveSassCompile.settings.generateMap": false  // 去掉map文件
 }

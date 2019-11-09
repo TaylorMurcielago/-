@@ -45,6 +45,12 @@
     <view class="introduced">
       <!-- <image class="introudced-img" src="{{recommendTitlePicStr}}"></image> -->
       特别推荐
+      <!-- <van-search value="{{ value }}" placeholder="请输入搜索关键词" /> -->
+      <!-- <view class="search-wrap">
+    <view class="search-location">浙江</view>
+    <wxc-search class="search" radius="30" mode="static" placeholder="iphoneX"></wxc-search>
+    <wxc-icon class="search-icon" type="message" size="44" color="#fff"></wxc-icon>
+  </view> -->
     </view>
 
     <view class="type-goods">
