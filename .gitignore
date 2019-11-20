@@ -1,2 +1,4 @@
 node_modules
 *.scss
+.DS_Store
+.gitignore

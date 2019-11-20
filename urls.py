@@ -9,5 +9,5 @@ urlpatterns = [
     url('goodslist/', view.goodslist),
     url('categories/', view.categories),
      url('showlist/', view.showlist),
-     url('login/', LoginView.as_view()),
+     url('login/', view.login),
 ]

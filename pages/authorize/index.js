@@ -99,13 +99,15 @@ Page({
     }
     wx.login({
       success: function (res) {
+        console.log(res)
         wx.request({
-          url: 'https://api.it120.cc/' + app.globalData.subDomain + '/user/wxapp/login',
+          method: "post",
+          url: 'https://www.lcpww.cn/api/login/',
           data: {
             code: res.code
           },
           success: function (res) {
-            console.log(res.data.code)
+            console.log(res)
             if (res.data.code == 10000) {
               // 去注册
               that.registerUser();
