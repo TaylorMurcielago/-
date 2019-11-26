@@ -81,7 +81,7 @@ Page({
     let token = wx.getStorageSync('token');
     if (token) {
       wx.request({
-        url: 'https://api.it120.cc/' + app.globalData.subDomain + '/user/check-token',
+        url: 'https://www.lcpww.cn/api/login/',
         data: {
           token: token
         },
@@ -93,6 +93,13 @@ Page({
             // 回到原来的地方放
             wx.navigateBack();
           }
+        },
+        fail:function(res){
+          wx.showModal({
+            title: 'fail',
+            content: '请重试',
+            showCancel: false
+          })
         }
       })
       return;
@@ -108,6 +115,7 @@ Page({
           },
           success: function (res) {
             console.log(res)
+            
             if (res.data.code == 10000) {
               // 去注册
               that.registerUser();
@@ -127,6 +135,9 @@ Page({
             wx.setStorageSync('uid', res.data.data.uid)
             // 回到原来的页面
             wx.navigateBack();
+          },
+          fail:function(res){
+            console.log(res);
           }
         })
       }
