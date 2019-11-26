@@ -26,7 +26,8 @@ SECRET_KEY = 'prjj0)&kvqy^(4mps&fnp#=hk$poj!4pb_(gyvrp19&y*xj^u*'
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-
+APP_SECRET='7652138c7a1bc6c16fbbe52d7a68c981'
+APP_ID='wxd81b5e2dbedae2f9'
 
 # Application definition
 
@@ -128,4 +129,14 @@ CACHES = {
              "PASSWORD": "Ab@123456",
         },
     },
+}
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    ),
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.BasicAuthentication',
+    ),
 }
