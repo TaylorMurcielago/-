@@ -13,10 +13,7 @@ from rest_framework import serializers
 from django.utils.translation import ugettext_lazy as _
 from rest_framework_jwt.compat import get_username_field
 from rest_framework_jwt.settings import api_settings
-from django.http import HttpResponse
-import json
-from django.http.response import JsonResponse
-import requests
+
 jwt_payload_handler = api_settings.JWT_PAYLOAD_HANDLER
 jwt_encode_handler = api_settings.JWT_ENCODE_HANDLER
 User = get_user_model()
@@ -56,14 +53,10 @@ class JSONWechatTokenSerializer(Serializer):
 
     def validate(self, attrs):
         code = attrs.get('code')
-        # return '+++++++=====+++++'
-        # code = '081plHLI1h61m40gPdNI1uwsLI1plHLi'
         result = self._credentials_validation(code)
-        # return result
         user = self._get_or_create_user(result['openid'], result['session_key'])
         attrs['username'] = result['openid']
         attrs['password'] = result['openid']
-        
         # self._update_userinfo(user, attrs)
         credentials = {
             self.username_field: attrs.get(self.username_field),
@@ -78,28 +71,10 @@ class JSONWechatTokenSerializer(Serializer):
                     raise serializers.ValidationError(msg)
 
                 payload = jwt_payload_handler(user)
-                # data1 = {
-                #         "images": [
-                #                         {
-                #                             "id": 0, "businessId": 0, "picUrl": "https://www.lcpww.cn/images/1.jpg"
-                #                             },
-                #                             {
-                #                             "id": 1, "businessId": 1, "picUrl": "https://www.lcpww.cn/images/2.jpg"
-                #                             },
-                #                             {
-                #                             "id": 2, "businessId": 1, "picUrl": "https://www.lcpww.cn/images/3.jpg"
-                #                             },
-                #                             {
-                #                             "id": 3, "businessId": 1, "picUrl": "https://www.lcpww.cn/images/1.jpg"
-                #                             }
-                #                 ],
-                #         "code": 0
-                #         }
-                
-                
+
                 return {
                     'token': jwt_encode_handler(payload),
-                    'user':user
+                    'user': user
                 }
             else:
                 msg = _('Unable to log in with provided credentials.')
