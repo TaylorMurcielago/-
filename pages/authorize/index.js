@@ -109,7 +109,10 @@ Page({
         console.log(res)
         wx.request({
           method: "post",
-          url: 'https://www.lcpww.cn/api/login/',
+          url: 'http://localhost:8000/login/',
+          header: {  
+                     'content-type': 'application/x-www-form-urlencoded'  
+                  },  
           data: {
             code: res.code
           },

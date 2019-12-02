@@ -39,7 +39,7 @@ class JSONWechatTokenSerializer(Serializer):
         """
         userinfo的信息存在此处
         """
-        # self.fields['nickName'] = serializers.CharField(allow_null=True, )
+        self.fields['username_field'] = serializers.CharField(allow_null=True,source='b_author', required=False )
         # self.fields['gender'] = serializers.IntegerField(allow_null=True, )
         # self.fields['language'] = serializers.CharField(allow_null=True, )
         # self.fields['city'] = serializers.CharField(allow_null=True, )
@@ -53,28 +53,27 @@ class JSONWechatTokenSerializer(Serializer):
 
     def validate(self, attrs):
         code = attrs.get('code')
+        # nickName='111'
         result = self._credentials_validation(code)
         user = self._get_or_create_user(result['openid'], result['session_key'])
-        attrs['username'] = result['openid']
+        attrs['nickName'] = result['openid']
         attrs['password'] = result['openid']
         # self._update_userinfo(user, attrs)
         credentials = {
-            self.username_field: attrs.get(self.username_field),
-            'password': attrs.get('password')
-        }
-
+            self.username_field: user.username,
+            'password': attrs.get('password'),
+            'nickName': attrs.get('nickName') 
+        } 
         if all(credentials.values()):
             user = authenticate(**credentials)
             if user:
                 if not user.is_active:
                     msg = _('User account is disabled.')
                     raise serializers.ValidationError(msg)
-
                 payload = jwt_payload_handler(user)
-
                 return {
                     'token': jwt_encode_handler(payload),
-                    'user': user
+                    'user': payload
                 }
             else:
                 msg = _('Unable to log in with provided credentials.')
@@ -82,7 +81,6 @@ class JSONWechatTokenSerializer(Serializer):
         else:
             msg = _('Must include "userinfo" and "code"')
             raise serializers.ValidationError(msg)
-
     # @staticmethod
     # def _update_userinfo(user, attrs):
     #     try:
