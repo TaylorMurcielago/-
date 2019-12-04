@@ -81,7 +81,7 @@ Page({
     let token = wx.getStorageSync('token');
     if (token) {
       wx.request({
-        url: 'https://www.lcpww.cn/api/login/',
+        url: 'http://127.0.0.1:8000/register/',
         data: {
           token: token
         },
@@ -109,7 +109,7 @@ Page({
         console.log(res)
         wx.request({
           method: "post",
-          url: 'http://localhost:8000/login/',
+          url: 'http://localhost:8000/register/',
           header: {  
                      'content-type': 'application/x-www-form-urlencoded'  
                   },  
