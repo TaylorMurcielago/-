@@ -81,7 +81,8 @@ Page({
     let token = wx.getStorageSync('token');
     if (token) {
       wx.request({
-        url: 'http://127.0.0.1:8000/register/',
+        method: "post",
+        url: 'http://127.0.0.1:8000/login/',
         data: {
           token: token
         },
@@ -109,7 +110,7 @@ Page({
         console.log(res)
         wx.request({
           method: "post",
-          url: 'http://localhost:8000/register/',
+          url: 'http://localhost:8000/login/',
           header: {  
                      'content-type': 'application/x-www-form-urlencoded'  
                   },  
@@ -134,8 +135,8 @@ Page({
               })
               return;
             }
-            wx.setStorageSync('token', res.data.data.token)
-            wx.setStorageSync('uid', res.data.data.uid)
+            wx.setStorageSync('token', res.data.token)
+            // wx.setStorageSync('uid', res.data.data.uid)
             // 回到原来的页面
             wx.navigateBack();
           },
@@ -158,11 +159,20 @@ Page({
             var encryptedData = res.encryptedData;
             // 下面开始调用注册接口
             wx.request({
-              url: 'https://api.it120.cc/' + app.globalData.subDomain + '/user/wxapp/register/complex',
+              method: "post",
+              url: 'http://localhost:8000/register/',
               data: { code: code, encryptedData: encryptedData, iv: iv }, // 设置请求的 参数
               success: (res) => {
                 wx.hideLoading();
-                that.login();
+                wx.setStorageSync('token', res.data.token)
+            // wx.setStorageSync('uid', res.data.data.uid)
+            // 回到原来的页面
+            wx.navigateBack();
+            setTimeout(() => {
+              that.login();
+            }, 2000);
+                
+                console.log('tttttttttt');
               }
             })
           }

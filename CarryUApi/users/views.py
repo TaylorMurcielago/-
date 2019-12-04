@@ -9,17 +9,23 @@ from django.contrib.auth import authenticate, login
 jwt_payload_handler = api_settings.JWT_PAYLOAD_HANDLER
 jwt_encode_handler = api_settings.JWT_ENCODE_HANDLER
 
-
 class UserViewSet(viewsets.ViewSet):
     permission_classes = [AllowAny]
-
     def list(self, request):
         code = request.data.get("code")
         user = authenticate(code=code)
         if user:
             login(request, user)
             jwt = jwt_encode_handler(jwt_payload_handler(user))
-            return Response({'token': jwt})
+            resp = {
+                "token": jwt,
+                "code":0
+            }
+        else:
+            resp = {
+                "code":10000
+            }
+            return Response(resp)
         return Response({"error_code": 401, "error": "登陆失败"})
 
     def create(self, request):
@@ -30,12 +36,10 @@ class UserViewSet(viewsets.ViewSet):
             jwt = jwt_encode_handler(jwt_payload_handler(user))
             resp = {
                 "token": jwt,
-                "code":10000
+                "code":20000
             }
             return Response(resp)
         return Response({"error_code": 401, "error": "注册失败"})
-
-
 class UserUpdateViewSet(viewsets.ViewSet):
     permission_classes = [IsAuthenticated]
 
